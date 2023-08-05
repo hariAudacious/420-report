@@ -10,6 +10,7 @@ module.exports = {
   },
   mode: "development",
   target: "node",
+  externals: ["express"],
   module: {
     rules: [
       {
