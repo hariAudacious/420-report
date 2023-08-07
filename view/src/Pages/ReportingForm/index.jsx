@@ -21,7 +21,10 @@ const ReportingForm = () => {
       }
     });
     try {
-      await axios.post(process.env.API, finalValues);
+      await axios.post(
+        "https://sheet-api.up.railway.app/v1/sheet",
+        finalValues
+      );
       message.success("Report Submitted Successfully");
       form.resetFields();
     } catch (error) {
