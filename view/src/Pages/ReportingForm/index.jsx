@@ -9,9 +9,9 @@ const ReportingForm = () => {
   const [loading, setLoading] = useState(false);
   const onFinish = async (values) => {
     setLoading(true);
-    const { DA, TICKET_FARE } = values;
+    const { DA, TICKET_FARE, LODGING_HOTAL = 0 } = values;
     const finalValues = {
-      TOTAL: Number(DA) + Number(TICKET_FARE),
+      TOTAL: Number(DA) + Number(TICKET_FARE) + Number(LODGING_HOTAL),
     };
     Object.keys(values).map((key) => {
       if (key === "DATE") {
